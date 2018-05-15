@@ -39,7 +39,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
-        tags ={"~@TC_001","~@TC_002","~@TC_003","@TC_04"},
+        tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
 		dryRun=false,
 		monochrome = false
 )
@@ -70,40 +70,6 @@ public class CDNewCarVerificationRunner extends TestBase{
 	}
 	
 	
-	/*@BeforeTest
-	@Parameters({"deviceType"})
-    public void onBeforeTest(String deviceType,ITestContext testContext)
-	 	{
-		 	String XMLtestCaseName=testContext.getName();
-		 	deviceTyp=deviceType;
-		 	
-		 	try
-		 	{
-		 		if(XMLtestCaseName.contains("Samsung7"))
-	            {
-		 			System.out.println("Step 1 of report start and browserID is " + browserID);	
-		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
-	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
-	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
-	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
-	                DesiredCapabilities cap= DesiredCapabilities.android();
-					cap.setCapability("no", true);
-					cap.setCapability("pageLoadStrategy", "none");
-					cap.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
-					cap.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
-					cap.setCapability(MobileCapabilityType.DEVICE_NAME, "My Phone");
-					cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-					cap.setCapability(MobileCapabilityType.VERSION, "7.0");
-					URL url = new URL("http://0.0.0.0:4723/wd/hub");
-					driver= new AndroidDriver(url,cap);
-	}
-		 	}
-		 	
-		 	catch(Exception e)
-		 	{
-		 		System.out.println(e.getMessage());
-		 	}
-	 	}*/
 	
 	@BeforeTest
 	@Parameters({"deviceID"})
@@ -122,16 +88,6 @@ public class CDNewCarVerificationRunner extends TestBase{
 	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
 	                TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
-	                /*DesiredCapabilities cap= DesiredCapabilities.android();
-					cap.setCapability("no", true);
-					cap.setCapability("pageLoadStrategy", "none");
-					cap.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
-					cap.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
-					cap.setCapability(MobileCapabilityType.DEVICE_NAME, "My Phone");
-					cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-					cap.setCapability(MobileCapabilityType.VERSION, "7.0");
-					URL url = new URL("http://0.0.0.0:4723/wd/hub");
-					driver= new AndroidDriver(url,cap);*/
 	}
 		 	}
 		 	
@@ -141,16 +97,6 @@ public class CDNewCarVerificationRunner extends TestBase{
 		 	}
 	 	}
 	
-	public void setCapabilities()
-	{
-		/*cap.setCapability("no", true);
-		cap.setCapability("pageLoadStrategy", "none");
-		cap.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
-		cap.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "My Phone");
-		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		cap.setCapability(MobileCapabilityType.VERSION, "7.0");*/
-	}
 	
 	@Test()
 	public void runCukes()
