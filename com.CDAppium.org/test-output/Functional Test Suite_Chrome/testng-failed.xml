@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Functional Test Suite_Chrome]" parallel="tests">
+  <parameter name="deviceID" value="42003a0fd3148479"/>
+  <test name="Samsung7(failed)" parallel="tests">
+    <parameter name="deviceID" value="42003a0fd3148479"/>
+    <classes>
+      <class name="runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner">
+        <methods>
+          <include name="onBeforeTestMobile"/>
+          <include name="afterSuite"/>
+          <include name="runCukes"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner -->
+    </classes>
+  </test> <!-- Samsung7(failed) -->
+</suite> <!-- Failed suite [Functional Test Suite_Chrome] -->

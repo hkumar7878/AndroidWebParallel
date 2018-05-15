@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Functional Test Suite_Chrome" duration-ms="36166" started-at="2018-05-15T11:23:43Z" finished-at="2018-05-15T11:24:19Z">
+    <groups>
+    </groups>
+    <test name="Samsung7" duration-ms="36166" started-at="2018-05-15T11:23:43Z" finished-at="2018-05-15T11:24:19Z">
+      <class name="runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="beforeSuite" is-config="true" duration-ms="12" started-at="2018-05-15T16:53:43Z" finished-at="2018-05-15T16:53:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="onBeforeTestMobile" is-config="true" duration-ms="23681" started-at="2018-05-15T16:53:43Z" finished-at="2018-05-15T16:54:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[42003a0fd3148479]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@eb21112]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onBeforeTestMobile -->
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="runCukes" duration-ms="12131" started-at="2018-05-15T16:54:07Z" finished-at="2018-05-15T16:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCukes -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="afterTest" is-config="true" duration-ms="337" started-at="2018-05-15T16:54:19Z" finished-at="2018-05-15T16:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="afterSuite" is-config="true" duration-ms="1" started-at="2018-05-15T16:54:19Z" finished-at="2018-05-15T16:54:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner -->
+    </test> <!-- Samsung7 -->
+  </suite> <!-- Functional Test Suite_Chrome -->
+</testng-results>
