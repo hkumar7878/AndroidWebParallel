@@ -23,6 +23,7 @@ public class PageAndroidWeb_HomePage extends TestBase{
 	GenericHelper generichelper= new GenericHelper();
 	static boolean flag;
 	public static String err_Msg;
+	//PageAndroidWeb_NewCar cdobjNewCar;
 	
 	public PageAndroidWeb_HomePage(AppiumDriver driver)
 	{
@@ -40,13 +41,16 @@ public class PageAndroidWeb_HomePage extends TestBase{
 	@FindBy(xpath="//a[@class='fab new']")
 	WebElement btnNewCar;
 	
+	@FindBy(xpath="//a[@class='fab used']")
+	WebElement btnUsedCar;
+	
 	
 	public void verifyHomePage(String deviceID)
 	{
 		try
 		{
 			log.info("Checking Car Dekho home page");
-			flag=generichelper.isDisplayed(txtHomePageHd);
+			flag=GenericHelper.isDisplayed(txtHomePageHd);
 			Assert.assertTrue(flag, "Car dekho home page is not displayed");
 			System.out.println("Car dekho home page is displayed");
 			if(deviceID.contains("42003a0fd3148479"))
@@ -63,20 +67,29 @@ public class PageAndroidWeb_HomePage extends TestBase{
 		}
 	}
 	
-	public void verifyBtnDisplay(String btnName,String deviceID )
+	public void verifyBtnDisplay(String btnName,String passResult,String failResult,String deviceID)
 	{
 		try
 		{
+			Thread.sleep(5000);
 			log.info("Checking New Car button existence on home page");
 			if(btnName.equalsIgnoreCase("New Car"))
 			{
-				flag=generichelper.isDisplayed(btnNewCar);
+				flag=GenericHelper.isDisplayed(btnNewCar);
+				Assert.assertTrue(flag, "New Car button is not displayed");
+				System.out.println("New Car button is displayed");
 			}
 			
-			Assert.assertEquals(flag, "New Car button is not displayed");
+			if(btnName.equalsIgnoreCase("Used Car"))
+			{
+				flag=GenericHelper.isDisplayed(btnUsedCar);
+				Assert.assertTrue(flag, "Used Car button is not displayed");
+			}
+			
+			
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				CH_logger.log(LogStatus.PASS, "New Car button is displayed");
+				CH_logger.log(LogStatus.PASS, passResult);
 			}
 		}
 		
@@ -84,24 +97,79 @@ public class PageAndroidWeb_HomePage extends TestBase{
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
-			CH_logger.log(LogStatus.FAIL, "New Car button is not displayed");
+			CH_logger.log(LogStatus.FAIL, failResult);
 		}
 	}
 	
 	
-	public void clickBtn(String btnName,String deviceID)
+	public PageAndroidWeb_NewCar clickBtn(String btnName,String passResult,String failResult,String deviceID) throws InterruptedException
 	{
+		
+		Thread.sleep(2000);
 		try
 		{
+			log.info(".........Clicking on New Car button........");
+			if(btnName.equalsIgnoreCase("New Car"))
+			{
+				System.out.println("Checking new car button clicking");
+				flag=GenericHelper.click(btnNewCar);
+				Assert.assertTrue(flag, "New Car button is not clicked");
+			}
 			
+			if(btnName.equalsIgnoreCase("Used Car"))
+			{
+				flag=GenericHelper.click(btnUsedCar);
+				Assert.assertTrue(flag, "Used Car button is not clicked");
+			}
+			
+			
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				CH_logger.log(LogStatus.PASS, passResult);
+			}
 		}
 		
 		catch(Exception e)
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
-			CH_logger.log(LogStatus.FAIL, "New Car button is not displayed");
+			CH_logger.log(LogStatus.FAIL, failResult);
 		}
+		return new PageAndroidWeb_NewCar(driver);
+		
 	}
+	
+	public PageAndroidWeb_UsedCar clickUsedCarBtn(String btnName,String passResult,String failResult,String deviceID)
+	{
+		PageAndroidWeb_UsedCar cdobjUsedCar;
+		try
+		{
+			log.info(".........Clicking on New Car button........");
+			
+			
+			if(btnName.equalsIgnoreCase("Used Car"))
+			{
+				flag=GenericHelper.click(btnUsedCar);
+				Assert.assertTrue(flag, "Used Car button is not clicked");
+			}
+			
+			
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				CH_logger.log(LogStatus.PASS, passResult);
+			}
+		}
+		
+		catch(Exception e)
+		{
+			e.getMessage();
+			System.out.println(e.getMessage());
+			CH_logger.log(LogStatus.FAIL, failResult);
+		}
+		return new PageAndroidWeb_UsedCar(driver);
+		
+	}
+	
+	
 
 }

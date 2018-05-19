@@ -11,6 +11,8 @@ import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.pageobject.PageAndroidWeb_HomePage;
 
 
+import com.cucumber.framework.pageobject.PageAndroidWeb_NewCar;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
@@ -20,6 +22,7 @@ public class TC_01_NewCarPageDisplayVerification {
 	TestBase testbaseObj= new TestBase();
 	public AppiumDriver driver;
 	PageAndroidWeb_HomePage cdHomePgObject;
+	PageAndroidWeb_NewCar cdNewCarPgObject;
 
 	
 	@Then("^user verifies home page is displayed$")
@@ -36,19 +39,23 @@ public class TC_01_NewCarPageDisplayVerification {
 	public void verify_New_Car_Button_is_displayed_on_the_home_page() throws Throwable {
 	   
 	   System.out.println("Inside New Button verification");
-	   cdHomePgObject.verifyBtnDisplay("New Car", TestBase.deviceID);
+	   String passResult="New Button is displayed";
+	   String failResult="New Button is not displayed";
+	   cdHomePgObject.verifyBtnDisplay("New Car",passResult,failResult,TestBase.deviceID);
 	   
 	}
 
 	@Then("^click on New Car button$")
 	public void click_on_New_Car_button() throws Throwable {
-	   
-	   
+		String passResult="New Button is clicked successfully";
+		String failResult="New Button is not clicked";
+		cdNewCarPgObject = new PageAndroidWeb_NewCar(driver);
+		cdNewCarPgObject= cdHomePgObject.clickBtn("New Car",passResult,failResult, TestBase.deviceID);
 	}
 
 	@Then("^Verify New Car page is displayed$")
 	public void verify_New_Car_page_is_displayed() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+		cdNewCarPgObject.verifyPgHeader("Select a Category",TestBase.deviceID);
 	    
 	}
 

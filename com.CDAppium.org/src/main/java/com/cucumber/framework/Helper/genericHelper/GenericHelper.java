@@ -72,7 +72,7 @@ public class GenericHelper{
 		boolean flag=false;
 		try
 		{
-		//if(element.isDisplayed())
+		
 			
 		if(GenericHelper.isDisplayed(element))
 			{

@@ -4,7 +4,7 @@ import com.cucumber.framework.Helper.TestBase.TestBase;
 
 public class ActionBeforeClass extends TestBase{
 	
-	public void beforeTestAction(String browserType,String scenarioName,String tcDesc)
+	public void beforeScenarioAction(String browserType,String scenarioName,String tcDesc)
 	
 	{
 		

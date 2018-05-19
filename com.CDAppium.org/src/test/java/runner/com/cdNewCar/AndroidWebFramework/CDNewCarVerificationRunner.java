@@ -39,7 +39,8 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
-        tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
+       tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
+        //tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
 		dryRun=false,
 		monochrome = false
 )
@@ -75,7 +76,7 @@ public class CDNewCarVerificationRunner extends TestBase{
 	@Parameters({"deviceID"})
     public void onBeforeTestMobile(String deviceID,ITestContext testContext)
 	 	{
-		 	String XMLtestCaseName=testContext.getName();
+		 	TestBase.XMLtestCaseName=testContext.getName();
 		 	this.deviceID=deviceID;
 		 	
 		 	try
@@ -87,7 +88,7 @@ public class CDNewCarVerificationRunner extends TestBase{
 	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
 	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
-	                TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
+	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
 	}
 		 	}
 		 	

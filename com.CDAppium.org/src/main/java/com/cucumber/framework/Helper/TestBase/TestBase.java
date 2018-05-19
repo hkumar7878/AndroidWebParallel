@@ -10,12 +10,15 @@ import java.util.concurrent.TimeUnit;
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.configreader.ObjectRepo;
 import com.cucumber.framework.configreader.PropertyFileReader;
+
 import org.openqa.selenium.remote.BrowserType;
+
 import com.cucumber.framework.configuration.browser.ChromeBrowser;
 import com.cucumber.framework.configuration.browser.FireFoxBrowser;
 import com.cucumber.framework.utility.ActionBeforeClass;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -36,7 +39,7 @@ public class TestBase {
 	ActionBeforeClass actionBeforeClass;
 	public static String browserID=null;
 	public static String deviceID=null;
-	String XMLtestCaseName=null;
+	public static String XMLtestCaseName;
 	String app_URL=null;
 	static DesiredCapabilities cap= new DesiredCapabilities();
 	
@@ -45,6 +48,7 @@ public class TestBase {
     public static ExtentTest FF_logger;
     public static ExtentTest CH_logger;
     public static String scenarioName;
+    //String XMLtestCaseName;
     
     @Before
 	public void before(Scenario scenario) throws Exception
@@ -56,14 +60,19 @@ public class TestBase {
 		ObjectRepo.reader=new PropertyFileReader();
 		String bName=ObjectRepo.reader.getBrowserName();
 		System.out.println("Inside Before method");
-	    actionBeforeClass.beforeTestAction(bName,scenarioName,"test");
+	    actionBeforeClass.beforeScenarioAction(bName,scenarioName,"test");
+	   // setUpAndroidDriver(String deviceID,String tcName);
+	    setUpAndroidDriver(deviceID,XMLtestCaseName);
 	}
 	
 	@After
-	public void after(Scenario scenario)
+	public void after(Scenario scenario) throws Exception
 	{
 		driver.quit();
-		log.info("");
+		log.info("Quited the scenario driver");
+		System.out.println("Quited the scenario driver");
+		System.out.println("---------Again restarting the driver instance for next scenarios--------");
+		//setUpAndroidDriver(deviceID,XMLtestCaseName);
 	}
 	
 	
@@ -139,12 +148,19 @@ public class TestBase {
 
 	
 	public static void setUpAndroidDriver(String deviceID,String tcName) throws Exception
-	{
-		
-		driver=getAnroidBrowserObject(deviceID,tcName);
-		log.debug("Initialize Webdriver : " + driver.hashCode());
-		driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(),TimeUnit.SECONDS);
+	{		
+		try
+		{
+			driver=getAnroidBrowserObject(deviceID,tcName);
+			log.debug("Initialize Webdriver : " + driver.hashCode());
+			driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(),TimeUnit.SECONDS);
 		//driver.manage().window().maximize();
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 		
 	}
 	

@@ -143,7 +143,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>${project.basedir}\testng.xml</suiteXmlFile>
+						<suiteXmlFile>${project.basedir}\AndroidMobileApptestng.xml</suiteXmlFile>
 					</suiteXmlFiles>					
 				</configuration>
 			</plugin>
