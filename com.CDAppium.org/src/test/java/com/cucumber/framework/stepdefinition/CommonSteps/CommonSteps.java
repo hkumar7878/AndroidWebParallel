@@ -16,6 +16,7 @@ public class CommonSteps {
 	@Given("^navigate to web site$")
 	public void navigate_to_web_site() throws Throwable {
 		TestBase.driver.get(ObjectRepo.reader.getWebSite());
+		//comment
 	  
 	}
 }
