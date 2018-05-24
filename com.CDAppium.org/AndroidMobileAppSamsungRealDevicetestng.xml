@@ -9,18 +9,5 @@
 				<class name="runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner"></class>	
 		</classes>    			
  </test>
- 
- 
- 
- 
-   <test name="Samsung Galaxy Emulator" >
-  		<parameter name="deviceID" value="emulator-5554"></parameter> 
-			 <classes> 				
-				<class name="runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner"></class>	
-			</classes>                                                       
- 	</test> 
- 	
-   
-   
 
 </suite> <!-- Suite -->

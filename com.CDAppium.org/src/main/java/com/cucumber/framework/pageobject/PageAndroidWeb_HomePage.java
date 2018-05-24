@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import ErrorCollectors.ErrorCollector;
+
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.Helper.Wait.WaitHelper;
@@ -158,12 +160,18 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			{
 				CH_logger.log(LogStatus.PASS, passResult);
 			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				CH_logger.log(LogStatus.PASS, passResult);
+			}
 		}
 		
 		catch(Exception e)
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
+			ErrorCollector.addVerificationFailure(e);
 			CH_logger.log(LogStatus.FAIL, failResult);
 		}
 		return new PageAndroidWeb_UsedCar(driver);

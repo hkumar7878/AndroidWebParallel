@@ -38,9 +38,9 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		plugin = {"html:target/cucumber-html-report",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
-	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
-       tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
-        //tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
+	
+      tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
+      //  tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
 		dryRun=false,
 		monochrome = false
 )
@@ -89,7 +89,17 @@ public class CDNewCarVerificationRunner extends TestBase{
 	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
 	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
-	}
+	            }	
+		 		
+		 		else if(XMLtestCaseName.contains("Samsung Galaxy Emulator"))
+	            {
+		 			System.out.println("Step 1 of report start and browserID is " + browserID);	
+		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
+	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
+	                report=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
+	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
+	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
+	            }
 		 	}
 		 	
 		 	catch(Exception e)

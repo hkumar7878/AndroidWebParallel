@@ -44,10 +44,15 @@ public class TestBase {
 	static DesiredCapabilities cap= new DesiredCapabilities();
 	
 	public static ExtentReports report;
+	public static ExtentReports androidEmulatorRPT1;
+	public static ExtentReports androidReadDeviceRPT1;
     public static ExtentReports report1;
     public static ExtentTest FF_logger;
+    public static ExtentTest androidEmulator_logger1;
     public static ExtentTest CH_logger;
+    public static ExtentTest androidReadDevice_logger1;
     public static String scenarioName;
+    public static URL url;
     //String XMLtestCaseName;
     
     @Before
@@ -123,14 +128,29 @@ public class TestBase {
 				cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 				cap.setCapability(MobileCapabilityType.VERSION, "7.0");
 				cap.setCapability("udid", deviceID);
+				//URL url = new URL("http://0.0.0.0:4723/wd/hub");
+				url = new URL("http://0.0.0.0:4723/wd/hub");
+				driver= new AppiumDriver(url,cap);
 				break;	
 				
 				
-			case "Samsung6":
+			case "Samsung Galaxy Emulator":
+				cap= DesiredCapabilities.android();
+				cap.setCapability("no", true);
+				cap.setCapability("pageLoadStrategy", "none");
+				cap.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
+				cap.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
+				cap.setCapability(MobileCapabilityType.DEVICE_NAME, "My Phone");
+				cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+				cap.setCapability(MobileCapabilityType.VERSION, "5.1.1");
+				cap.setCapability("udid", deviceID);
+				//URL url1 = new URL("http://0.0.0.0:4724/wd/hub");
+				url = new URL("http://0.0.0.0:4724/wd/hub");
+				driver= new AppiumDriver(url,cap);
 				break;
 			}	
-				URL url = new URL("http://0.0.0.0:4723/wd/hub");
-				driver= new AppiumDriver(url,cap);
+				//URL url = new URL("http://0.0.0.0:4723/wd/hub");
+				//driver= new AppiumDriver(url,cap);
 					
 			//default:
 				//throw new Exception("Driver not found" + new PropertyFileReader().getBrowserName());

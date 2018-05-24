@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">2 suites</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Functional_Test_Suite_Chrome">
-                    <span>C:\Users\hiteshg\git\AppiumAndroidWebProject\com.CDAppium.org\AndroidMobileApptestng.xml</span>
+                    <span>C:\Users\hiteshg\git\AppiumAndroidWebProject\com.CDAppium.org\AndroidMobileAppSamsungGalaxy1Emulatortestng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -115,6 +115,8 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
+        <div panel-name="suite-Master_Suite_AndroidMobileWeb" class="panel Master_Suite_AndroidMobileWeb">
+        </div> <!-- panel Master_Suite_AndroidMobileWeb -->
         <div panel-name="suite-Functional_Test_Suite_Chrome" class="panel Functional_Test_Suite_Chrome">
           <div class="suite-Functional_Test_Suite_Chrome-class-passed">
             <div class="main-panel-header rounded-window-top">
@@ -132,23 +134,48 @@
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Functional_Test_Suite_Chrome-class-passed -->
         </div> <!-- panel Functional_Test_Suite_Chrome -->
+        <div panel-name="test-xml-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\hiteshg\git\AppiumAndroidWebProject\com.CDAppium.org\MasterAndroidMobileApptestng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Master Suite_AndroidMobileWeb&quot; parallel=&quot;tests&quot;&gt;
+  &lt;suite-files&gt;
+    &lt;suite-file path=&quot;AndroidMobileAppSamsungGalaxy1Emulatortestng.xml&quot;/&gt;
+  &lt;/suite-files&gt;
+&lt;/suite&gt; &lt;!-- Master Suite_AndroidMobileWeb --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="test-xml-Functional_Test_Suite_Chrome" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\hiteshg\git\AppiumAndroidWebProject\com.CDAppium.org\AndroidMobileApptestng.xml</span>
+            <span class="header-content">C:\Users\hiteshg\git\AppiumAndroidWebProject\com.CDAppium.org\AndroidMobileAppSamsungGalaxy1Emulatortestng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Functional Test Suite_Chrome&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test name=&quot;Samsung7&quot;&gt;
-    &lt;parameter name=&quot;deviceID&quot; value=&quot;42003a0fd3148479&quot;/&gt;
+  &lt;test name=&quot;Samsung Galaxy Emulator&quot;&gt;
+    &lt;parameter name=&quot;deviceID&quot; value=&quot;emulator-5554&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Samsung7 --&gt;
+  &lt;/test&gt; &lt;!-- Samsung Galaxy Emulator --&gt;
 &lt;/suite&gt; &lt;!-- Functional Test Suite_Chrome --&gt;
             </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Master Suite_AndroidMobileWeb</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+            </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="testlist-Functional_Test_Suite_Chrome" class="panel">
@@ -158,9 +185,16 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Samsung7 (1 class)</span>
+                <span class="test-name">Samsung Galaxy Emulator (1 class)</span>
               </li>
             </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Master Suite_AndroidMobileWeb</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="group-Functional_Test_Suite_Chrome" class="panel">
@@ -168,6 +202,30 @@
             <span class="header-content">Groups for Functional Test Suite_Chrome</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Master Suite_AndroidMobileWeb</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Master_Suite_AndroidMobileWeb');
+function tableData_Master_Suite_AndroidMobileWeb() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(0);
+window.suiteTableData['Master_Suite_AndroidMobileWeb']= { tableData: data, tableDiv: 'times-div-Master_Suite_AndroidMobileWeb'}
+return data;
+}
+              </script>
+              <div id="times-div-Master_Suite_AndroidMobileWeb">
+              </div> <!-- times-div-Master_Suite_AndroidMobileWeb -->
+            </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Functional_Test_Suite_Chrome" class="panel">
@@ -188,7 +246,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runCukes')
 data.setCell(0, 2, 'runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner')
-data.setCell(0, 3, 111677);
+data.setCell(0, 3, 81242);
 window.suiteTableData['Functional_Test_Suite_Chrome']= { tableData: data, tableDiv: 'times-div-Functional_Test_Suite_Chrome'}
 return data;
 }
@@ -199,6 +257,13 @@ return data;
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="reporter-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Master Suite_AndroidMobileWeb</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="reporter-Functional_Test_Suite_Chrome" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Reporter output for Functional Test Suite_Chrome</span>
@@ -206,9 +271,23 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="ignored-methods-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="ignored-methods-Functional_Test_Suite_Chrome" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Master_Suite_AndroidMobileWeb" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -225,20 +304,20 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">onBeforeTestMobile(42003a0fd3148479, org.testng.TestRunner@eb21112)</span>
-                <span class="method-start">18 ms</span>
+                <span class="method-name">onBeforeTestMobile(emulator-5554, org.testng.TestRunner@710726a3)</span>
+                <span class="method-start">14 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">runCukes</span>
-                <span class="method-start">309 ms</span>
+                <span class="method-start">201 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">111989 ms</span>
+                <span class="method-start">81447 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">112401 ms</span>
+                <span class="method-start">81886 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
