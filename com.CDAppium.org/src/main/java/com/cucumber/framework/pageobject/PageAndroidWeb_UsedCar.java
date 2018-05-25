@@ -47,7 +47,13 @@ public class PageAndroidWeb_UsedCar extends TestBase{
 				System.out.println("Car dekho Used Car page is displayed");
 				if(deviceID.contains("42003a0fd3148479"))
 				{
-					CH_logger.log(LogStatus.PASS, "Used Car Page is displayed successfully");
+					androidReadDevice_logger1.log(LogStatus.PASS,"Correct page header is displayed");
+				}
+				
+				else if(deviceID.contains("emulator-5554"))
+				{
+					//androidEmulator_logger1
+					androidEmulator_logger1.log(LogStatus.PASS, "Correct page header is displayed");
 				}
 			}
 			
@@ -56,7 +62,16 @@ public class PageAndroidWeb_UsedCar extends TestBase{
 			{
 				e.getMessage();
 				System.out.println(e.getMessage());
-				CH_logger.log(LogStatus.PASS, "Used Car Page not is displayed successfully");
+				if(deviceID.contains("42003a0fd3148479"))
+				{
+					androidReadDevice_logger1.log(LogStatus.PASS,"Correct page header NOT is displayed");
+				}
+				
+				else if(deviceID.contains("emulator-5554"))
+				{
+					//androidEmulator_logger1
+					androidEmulator_logger1.log(LogStatus.PASS, "Correct page header NOT is displayed");
+				}
 			}
 		}
 

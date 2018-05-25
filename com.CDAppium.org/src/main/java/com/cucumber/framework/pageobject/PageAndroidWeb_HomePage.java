@@ -57,7 +57,12 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			System.out.println("Car dekho home page is displayed");
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				CH_logger.log(LogStatus.PASS, "Home Page is displayed");
+				androidReadDevice_logger1.log(LogStatus.PASS, "Home page is displayed");
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.PASS, "Home page is displayed");
 			}
 		}
 		
@@ -91,7 +96,13 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				CH_logger.log(LogStatus.PASS, passResult);
+				androidReadDevice_logger1.log(LogStatus.PASS, passResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.PASS, passResult);
 			}
 		}
 		
@@ -99,7 +110,17 @@ public class PageAndroidWeb_HomePage extends TestBase{
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
-			CH_logger.log(LogStatus.FAIL, failResult);
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, passResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.FAIL, passResult);
+			}
+			
 		}
 	}
 	
@@ -124,10 +145,15 @@ public class PageAndroidWeb_HomePage extends TestBase{
 				Assert.assertTrue(flag, "Used Car button is not clicked");
 			}
 			
-			
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				CH_logger.log(LogStatus.PASS, passResult);
+				androidReadDevice_logger1.log(LogStatus.PASS, passResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.PASS, passResult);
 			}
 		}
 		
@@ -135,7 +161,16 @@ public class PageAndroidWeb_HomePage extends TestBase{
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
-			CH_logger.log(LogStatus.FAIL, failResult);
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
+			}
 		}
 		return new PageAndroidWeb_NewCar(driver);
 		
@@ -158,12 +193,13 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				CH_logger.log(LogStatus.PASS, passResult);
+				androidReadDevice_logger1.log(LogStatus.PASS, passResult);
 			}
 			
 			else if(deviceID.contains("emulator-5554"))
 			{
-				CH_logger.log(LogStatus.PASS, passResult);
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.PASS, passResult);
 			}
 		}
 		
@@ -171,8 +207,18 @@ public class PageAndroidWeb_HomePage extends TestBase{
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
+			}
 			ErrorCollector.addVerificationFailure(e);
-			CH_logger.log(LogStatus.FAIL, failResult);
+			
 		}
 		return new PageAndroidWeb_UsedCar(driver);
 		

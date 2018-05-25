@@ -50,7 +50,13 @@ public class PageAndroidWeb_NewCar extends TestBase{
 				System.out.println("Car dekho home page is displayed");
 				if(deviceID.contains("42003a0fd3148479"))
 				{
-					CH_logger.log(LogStatus.PASS, "New Car Page is displayed successfully");
+					androidReadDevice_logger1.log(LogStatus.PASS,"New Car page is displayed successfully");
+				}
+				
+				else if(deviceID.contains("emulator-5554"))
+				{
+					//androidEmulator_logger1
+					androidEmulator_logger1.log(LogStatus.PASS, "New Car page is displayed successfully");
 				}
 			}
 			
@@ -59,7 +65,16 @@ public class PageAndroidWeb_NewCar extends TestBase{
 			{
 				e.getMessage();
 				System.out.println(e.getMessage());
-				CH_logger.log(LogStatus.PASS, "New Car Page not is displayed successfully");
+				if(deviceID.contains("42003a0fd3148479"))
+				{
+					androidReadDevice_logger1.log(LogStatus.PASS,"New Car page is not displayed successfully");
+				}
+				
+				else if(deviceID.contains("emulator-5554"))
+				{
+					//androidEmulator_logger1
+					androidEmulator_logger1.log(LogStatus.PASS, "New Car page is not displayed successfully");
+				}
 			}
 		}
 }
