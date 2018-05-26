@@ -1,17 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="112343" started-at="2018-05-19T07:44:56Z" finished-at="2018-05-19T07:46:48Z">
+  <suite name="Functional Test Suite_Emulator1" duration-ms="30815" started-at="2018-05-26T12:56:01Z" finished-at="2018-05-26T12:56:32Z">
     <groups>
     </groups>
-    <test name="Samsung7" duration-ms="112343" started-at="2018-05-19T07:44:56Z" finished-at="2018-05-19T07:46:48Z">
+    <test name="Samsung Galaxy Emulator" duration-ms="30815" started-at="2018-05-26T12:56:01Z" finished-at="2018-05-26T12:56:32Z">
       <class name="runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="beforeSuite" is-config="true" duration-ms="8" started-at="2018-05-19T13:14:56Z" finished-at="2018-05-19T13:14:56Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@12cdcf4]" name="beforeSuite" is-config="true" duration-ms="8" started-at="2018-05-26T18:26:01Z" finished-at="2018-05-26T18:26:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="onBeforeTestMobile" is-config="true" duration-ms="283" started-at="2018-05-19T13:14:56Z" finished-at="2018-05-19T13:14:56Z">
+        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@12cdcf4]" name="onBeforeTestMobile" is-config="true" duration-ms="200" started-at="2018-05-26T18:26:01Z" finished-at="2018-05-26T18:26:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[emulator-5554]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@629f066f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onBeforeTestMobile -->
+        <test-method status="FAIL" signature="runCukes()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@12cdcf4]" name="runCukes" duration-ms="30263" started-at="2018-05-26T18:26:01Z" finished-at="2018-05-26T18:26:32Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Multiple failures (2):
+
+Failure 1 of 2:
+java.lang.AssertionError: Car dekho home page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb.verifyHomePage(Pg_HomePage_AndroidWeb.java:60)
+	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.user_verifies_home_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner.runCukes(CDNewCarVerificationRunner.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+
+Failure 2 of 2:
+java.lang.AssertionError: expected [] but found [Select a Category]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Multiple failures (2):
+
+Failure 1 of 2:
+java.lang.AssertionError: Car dekho home page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb.verifyHomePage(Pg_HomePage_AndroidWeb.java:60)
+	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.user_verifies_home_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner.runCukes(CDNewCarVerificationRunner.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+
+Failure 2 of 2:
+java.lang.AssertionError: expected [] but found [Select a Category]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.cucumber.framework.pageobject.Pg_NewCar_AndroidWeb.verifyPgHeader(Pg_NewCar_AndroidWeb.java:52)
+	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.verify_New_Car_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner.runCukes(CDNewCarVerificationRunner.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCukes -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@12cdcf4]" name="afterTest" is-config="true" duration-ms="333" started-at="2018-05-26T18:26:32Z" finished-at="2018-05-26T18:26:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@12cdcf4]" name="afterSuite" is-config="true" duration-ms="1" started-at="2018-05-26T18:26:32Z" finished-at="2018-05-26T18:26:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner -->
+    </test> <!-- Samsung Galaxy Emulator -->
+  </suite> <!-- Functional Test Suite_Emulator1 -->
+  <suite name="Functional Test Suite_SamsungReal" duration-ms="48406" started-at="2018-05-26T12:56:32Z" finished-at="2018-05-26T12:57:20Z">
+    <groups>
+    </groups>
+    <test name="Samsung7" duration-ms="48406" started-at="2018-05-26T12:56:32Z" finished-at="2018-05-26T12:57:20Z">
+      <class name="runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@612fc6eb]" name="beforeSuite" is-config="true" duration-ms="0" started-at="2018-05-26T18:26:32Z" finished-at="2018-05-26T18:26:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="onBeforeTestMobile(java.lang.String, org.testng.ITestContext)[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@612fc6eb]" name="onBeforeTestMobile" is-config="true" duration-ms="8" started-at="2018-05-26T18:26:32Z" finished-at="2018-05-26T18:26:32Z">
           <params>
             <param index="0">
               <value>
@@ -20,26 +223,193 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@eb21112]]>
+                <![CDATA[org.testng.TestRunner@1542af63]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onBeforeTestMobile -->
-        <test-method status="PASS" signature="runCukes()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="runCukes" duration-ms="111677" started-at="2018-05-19T13:14:56Z" finished-at="2018-05-19T13:16:48Z">
+        <test-method status="FAIL" signature="runCukes()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@612fc6eb]" name="runCukes" duration-ms="48261" started-at="2018-05-26T18:26:32Z" finished-at="2018-05-26T18:27:20Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Multiple failures (2):
+
+Failure 1 of 2:
+java.lang.AssertionError: Car dekho home page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb.verifyHomePage(Pg_HomePage_AndroidWeb.java:60)
+	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.user_verifies_home_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner.runCukes(CDNewCarVerificationRunner.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+
+Failure 2 of 2:
+java.lang.AssertionError: expected [] but found [Select a Category]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Multiple failures (2):
+
+Failure 1 of 2:
+java.lang.AssertionError: Car dekho home page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb.verifyHomePage(Pg_HomePage_AndroidWeb.java:60)
+	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.user_verifies_home_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner.runCukes(CDNewCarVerificationRunner.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+
+Failure 2 of 2:
+java.lang.AssertionError: expected [] but found [Select a Category]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.cucumber.framework.pageobject.Pg_NewCar_AndroidWeb.verifyPgHeader(Pg_NewCar_AndroidWeb.java:52)
+	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.verify_New_Car_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner.runCukes(CDNewCarVerificationRunner.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCukes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="afterTest" is-config="true" duration-ms="366" started-at="2018-05-19T13:16:48Z" finished-at="2018-05-19T13:16:48Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@612fc6eb]" name="afterTest" is-config="true" duration-ms="131" started-at="2018-05-26T18:27:20Z" finished-at="2018-05-26T18:27:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@1500955a]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-05-19T13:16:48Z" finished-at="2018-05-19T13:16:48Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner@612fc6eb]" name="afterSuite" is-config="true" duration-ms="1" started-at="2018-05-26T18:27:20Z" finished-at="2018-05-26T18:27:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- runner.com.cdNewCar.AndroidWebFramework.CDNewCarVerificationRunner -->
     </test> <!-- Samsung7 -->
-  </suite> <!-- Functional Test Suite_Chrome -->
+  </suite> <!-- Functional Test Suite_SamsungReal -->
+  <suite name="Master Suite_AndroidMobileWeb" duration-ms="0" started-at="2018-05-26T12:57:21Z" finished-at="2018-05-26T12:57:21Z">
+    <groups>
+    </groups>
+  </suite> <!-- Master Suite_AndroidMobileWeb -->
 </testng-results>

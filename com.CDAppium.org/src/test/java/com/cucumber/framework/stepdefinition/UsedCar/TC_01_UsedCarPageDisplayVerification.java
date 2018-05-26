@@ -8,11 +8,11 @@ import org.openqa.selenium.WebElement;
 
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
-import com.cucumber.framework.pageobject.PageAndroidWeb_HomePage;
+import com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb;
 
 
-import com.cucumber.framework.pageobject.PageAndroidWeb_NewCar;
-import com.cucumber.framework.pageobject.PageAndroidWeb_UsedCar;
+import com.cucumber.framework.pageobject.Pg_NewCar_AndroidWeb;
+import com.cucumber.framework.pageobject.Pg_UsedCar_AndroidWeb;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,19 +22,8 @@ public class TC_01_UsedCarPageDisplayVerification {
 	
 	TestBase testbaseObj= new TestBase();
 	public AppiumDriver driver;
-	PageAndroidWeb_HomePage cdHomePgObject;
-	PageAndroidWeb_UsedCar cdUsedCarPgObject;
-
-	
-	/*@Then("^user verifies home page is displayed$")
-	public void user_verifies_home_page_is_displayed() throws Throwable {
-		driver=TestBase.driver;
-		System.out.println(driver.hashCode());
-		cdHomePgObject= new PageAndroidWeb_HomePage(driver);
-		System.out.println("Inside step def and browser Name is " + TestBase.deviceID);
-		cdHomePgObject.verifyHomePage(TestBase.deviceID);
-	    
-	}*/
+	Pg_HomePage_AndroidWeb cdHomePgObject;
+	Pg_UsedCar_AndroidWeb cdUsedCarPgObject;
 
 	@Then("^verify Used Car button is displayed on the home page$")
 	public void verify_Used_Car_Button_is_displayed_on_the_home_page() throws Throwable {
@@ -42,23 +31,27 @@ public class TC_01_UsedCarPageDisplayVerification {
 	   String passResult="Used Car button is displayed on home page";
 	   String failResult="Used Car button is displayed on home page";
 	   driver=TestBase.driver;
-	   System.out.println("Inside New Button verification");
-	   cdHomePgObject= new PageAndroidWeb_HomePage(driver);
+	   System.out.println("------------Checking Used Car Button on home page--------------");
+	   cdHomePgObject= new Pg_HomePage_AndroidWeb(driver);
 	   cdHomePgObject.verifyBtnDisplay("Used Car",passResult,failResult,TestBase.deviceID);
 	   
 	}
 
 	@Then("^click on Used Car button$")
 	public void click_on_Used_Car_button() throws Throwable {
+		System.out.println("------------Clicking Used Car Button on home page--------------");
 		String passResult="Used Car button is clikced successfully";
 		String failResult="Used Car button is not clicked";
-		cdUsedCarPgObject = new PageAndroidWeb_UsedCar(driver);
+		cdUsedCarPgObject = new Pg_UsedCar_AndroidWeb(driver);
 		cdUsedCarPgObject= cdHomePgObject.clickUsedCarBtn("Used Car",passResult,failResult,TestBase.deviceID);
 	}
 
 	@Then("^Verify Used Car page is displayed$")
 	public void verify_Used_Car_page_is_displayed() throws Throwable {
-		cdUsedCarPgObject.verifyPgHeader("Know everything",TestBase.deviceID);
+		System.out.println("------------Verifying Used Car page--------------");
+		String passResult="Used Car page is displayed successfully";
+		String failResult="Used Car page is not displayed successfully";
+		cdUsedCarPgObject.verifyPgHeader("Know everything",passResult,failResult,TestBase.deviceID);
 	    
 	}
 

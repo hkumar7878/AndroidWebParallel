@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.model.Test;
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.Helper.Wait.WaitHelper;
@@ -15,9 +16,11 @@ import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 import com.cucumber.framework.utility.ApplicationLib;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class PageAndroidWeb_UsedCar extends TestBase{
+import ErrorCollectors.ErrorCollector;
+
+public class Pg_NewCar_AndroidWeb extends TestBase{
 	AppiumDriver driver;
-	private final Logger log = LoggerHelper.getLogger(PageAndroidWeb_HomePage.class);
+	private final Logger log = LoggerHelper.getLogger(Pg_HomePage_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
 	ApplicationLib appLibOnj= new ApplicationLib();
@@ -25,54 +28,58 @@ public class PageAndroidWeb_UsedCar extends TestBase{
 	static boolean flag;
 	public static String err_Msg;
 	
-	public PageAndroidWeb_UsedCar(AppiumDriver driver)
+	public Pg_NewCar_AndroidWeb(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		waitHelper = new WaitHelper(driver);
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
-		//waitHelper.waitForElement(driver,20,txtUsedCarPageHd);
+		//waitHelper.waitForElement(driver,40,txtNewCarPageHd);
 	}
 	
-	@FindBy(xpath="//span[contains(text(),'Know everything')]")
-	WebElement txtUsedCarPageHd;
+	@FindBy(xpath="//h3[contains(text(),'Select a Category')]")
+	WebElement txtNewCarPageHd;
 	
-	public void verifyPgHeader(String expTxt,String deviceID)
+	
+	public void verifyPgHeader(String expTxt,String passResult,String failResult,String deviceID)
 	{
 		try
 		{
-				log.info("Checking Used Car Page");
-				actHdTxt=generichelper.readValueFromElement(txtUsedCarPageHd);
+			Thread.sleep(2000);	
+			System.out.println("Checking New Car page for....."  + deviceID);
+			log.info("Checking Car Dekho home page" + deviceID);
+				actHdTxt=generichelper.readValueFromElement(txtNewCarPageHd);
 				Assert.assertEquals(expTxt.trim(), actHdTxt.trim());
-				System.out.println("Car dekho Used Car page is displayed");
+				System.out.println("Car dekho home page is displayed");
 				if(deviceID.contains("42003a0fd3148479"))
 				{
-					androidReadDevice_logger1.log(LogStatus.PASS,"Correct page header is displayed");
+					androidReadDevice_logger1.log(LogStatus.PASS,passResult);
 				}
 				
 				else if(deviceID.contains("emulator-5554"))
 				{
 					//androidEmulator_logger1
-					androidEmulator_logger1.log(LogStatus.PASS, "Correct page header is displayed");
+					androidEmulator_logger1.log(LogStatus.PASS, passResult);
 				}
+				
 			}
 			
 			
-			catch(Exception e)
+			catch(Throwable e)
 			{
 				e.getMessage();
 				System.out.println(e.getMessage());
 				if(deviceID.contains("42003a0fd3148479"))
 				{
-					androidReadDevice_logger1.log(LogStatus.PASS,"Correct page header NOT is displayed");
+					androidReadDevice_logger1.log(LogStatus.FAIL,failResult);
 				}
 				
 				else if(deviceID.contains("emulator-5554"))
 				{
 					//androidEmulator_logger1
-					androidEmulator_logger1.log(LogStatus.PASS, "Correct page header NOT is displayed");
+					androidEmulator_logger1.log(LogStatus.FAIL, failResult);
 				}
+				ErrorCollector.addVerificationFailure(e);
 			}
 		}
-
 }

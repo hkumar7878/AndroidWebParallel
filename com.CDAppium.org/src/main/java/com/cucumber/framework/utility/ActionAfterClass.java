@@ -29,7 +29,7 @@ public class ActionAfterClass {
 			System.out.println("Extent report is flushed for emulator-5554");
 		}
 		
-		else if (browserID.contains("42003a0fd3148479"))
+		else if (browserID.contains("Samsung7"))
 		{
 			TestBase.androidReadDeviceRPT.endTest(TestBase.androidReadDevice_logger1);
 			TestBase.androidReadDeviceRPT.flush();

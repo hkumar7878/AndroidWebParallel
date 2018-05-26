@@ -39,13 +39,13 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	
-     tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
-     //   tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
+    tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
+     //  tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
 		dryRun=false,
 		monochrome = false
 )
 
-public class CDNewCarVerificationRunner extends TestBase{
+public class Runner_NewCarVerification extends TestBase{
 	
 	
 	TestBase testbaseObj= new TestBase();
@@ -85,7 +85,7 @@ public class CDNewCarVerificationRunner extends TestBase{
 	            {
 		 			System.out.println("Step 1 of report start and browserID is " + browserID);	
 		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
-	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
+	                String filePath=System.getProperty("user.dir")+"\\"+ "Samsung_RealDevice.html";
 	                androidReadDeviceRPT=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
 	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);
@@ -95,7 +95,7 @@ public class CDNewCarVerificationRunner extends TestBase{
 	            {
 		 			System.out.println("Step 1 of report start and browserID is " + browserID);	
 		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
-	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
+	                String filePath=System.getProperty("user.dir")+"\\"+ "Emulator1.html";
 	                androidEmulatorRPT=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
 	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
 	              //  TestBase.setUpAndroidDriver(deviceID,XMLtestCaseName);

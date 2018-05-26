@@ -17,28 +17,32 @@ import com.cucumber.framework.Helper.Wait.WaitHelper;
 import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class PageAndroidWeb_HomePage extends TestBase{
+public class Pg_HomePage_AndroidWeb extends TestBase{
 	
 	AppiumDriver driver;
-	private final Logger log = LoggerHelper.getLogger(PageAndroidWeb_HomePage.class);
+	private final Logger log = LoggerHelper.getLogger(Pg_HomePage_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
 	static boolean flag;
 	public static String err_Msg;
 	//PageAndroidWeb_NewCar cdobjNewCar;
 	
-	public PageAndroidWeb_HomePage(AppiumDriver driver)
+	public Pg_HomePage_AndroidWeb(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		waitHelper = new WaitHelper(driver);
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
 		waitHelper.waitForElement(driver,20,txtHomePageHd);
+		//waitHelper.waitForElementVisible(locator, timeOutInSeconds, pollingEveryInMillSec);(driver,20,txtHomePageHd);
 	}
 	
 	
 	@FindBy(xpath="//h1[contains(text(),'Welcome to your trusted car advisor')]")
 	WebElement txtHomePageHd;
+	
+	/*@FindBy(xpath="//h1[contains(text(),'Unit test')]")
+	WebElement txtHomePageHd;*/
 	
 	@FindBy(xpath="//a[@class='fab new']")
 	WebElement btnNewCar;
@@ -47,30 +51,41 @@ public class PageAndroidWeb_HomePage extends TestBase{
 	WebElement btnUsedCar;
 	
 	
-	public void verifyHomePage(String deviceID)
+	public void verifyHomePage(String deviceID,String passResult,String failResult)
 	{
 		try
 		{
-			log.info("Checking Car Dekho home page");
+			log.info("---------Checking Car Dekho home page------------");
 			flag=GenericHelper.isDisplayed(txtHomePageHd);
 			Assert.assertTrue(flag, "Car dekho home page is not displayed");
-			System.out.println("Car dekho home page is displayed");
+			System.out.println("---------Car dekho home page is displayed---------");
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				androidReadDevice_logger1.log(LogStatus.PASS, "Home page is displayed");
+				androidReadDevice_logger1.log(LogStatus.PASS, passResult);
 			}
 			
 			else if(deviceID.contains("emulator-5554"))
 			{
-				androidEmulator_logger1.log(LogStatus.PASS, "Home page is displayed");
+				androidEmulator_logger1.log(LogStatus.PASS, passResult);
 			}
 		}
 		
 		
-		catch(Exception e)
+		catch(Throwable e)
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
+			}
+			ErrorCollector.addVerificationFailure(e);
 		}
 	}
 	
@@ -78,7 +93,7 @@ public class PageAndroidWeb_HomePage extends TestBase{
 	{
 		try
 		{
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			log.info("Checking New Car button existence on home page");
 			if(btnName.equalsIgnoreCase("New Car"))
 			{
@@ -106,26 +121,27 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			}
 		}
 		
-		catch(Exception e)
+		catch(Throwable e)
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
+			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))
 			{
-				androidReadDevice_logger1.log(LogStatus.FAIL, passResult);
+				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);
 			}
 			
 			else if(deviceID.contains("emulator-5554"))
 			{
 				//androidEmulator_logger1
-				androidEmulator_logger1.log(LogStatus.FAIL, passResult);
+				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
 			}
 			
 		}
 	}
 	
 	
-	public PageAndroidWeb_NewCar clickBtn(String btnName,String passResult,String failResult,String deviceID) throws InterruptedException
+	public Pg_NewCar_AndroidWeb clickBtn(String btnName,String passResult,String failResult,String deviceID) throws InterruptedException
 	{
 		
 		Thread.sleep(2000);
@@ -152,15 +168,15 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			
 			else if(deviceID.contains("emulator-5554"))
 			{
-				//androidEmulator_logger1
 				androidEmulator_logger1.log(LogStatus.PASS, passResult);
 			}
 		}
 		
-		catch(Exception e)
+		catch(Throwable e)
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
+			log.info(e.getMessage());
 			if(deviceID.contains("42003a0fd3148479"))
 			{
 				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);
@@ -168,22 +184,19 @@ public class PageAndroidWeb_HomePage extends TestBase{
 			
 			else if(deviceID.contains("emulator-5554"))
 			{
-				//androidEmulator_logger1
 				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
 			}
 		}
-		return new PageAndroidWeb_NewCar(driver);
+		return new Pg_NewCar_AndroidWeb(driver);
 		
 	}
 	
-	public PageAndroidWeb_UsedCar clickUsedCarBtn(String btnName,String passResult,String failResult,String deviceID)
+	public Pg_UsedCar_AndroidWeb clickUsedCarBtn(String btnName,String passResult,String failResult,String deviceID)
 	{
-		PageAndroidWeb_UsedCar cdobjUsedCar;
+		Pg_UsedCar_AndroidWeb cdobjUsedCar;
 		try
 		{
-			log.info(".........Clicking on New Car button........");
-			
-			
+			log.info(".........Clicking on New Car button........");			
 			if(btnName.equalsIgnoreCase("Used Car"))
 			{
 				flag=GenericHelper.click(btnUsedCar);
@@ -207,20 +220,15 @@ public class PageAndroidWeb_HomePage extends TestBase{
 		{
 			e.getMessage();
 			System.out.println(e.getMessage());
-			if(deviceID.contains("42003a0fd3148479"))
-			{
-				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);
-			}
-			
+			log.info(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))			
+				androidReadDevice_logger1.log(LogStatus.FAIL, failResult);			
 			else if(deviceID.contains("emulator-5554"))
-			{
-				//androidEmulator_logger1
 				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
-			}
 			ErrorCollector.addVerificationFailure(e);
 			
 		}
-		return new PageAndroidWeb_UsedCar(driver);
+		return new Pg_UsedCar_AndroidWeb(driver);
 		
 	}
 	
