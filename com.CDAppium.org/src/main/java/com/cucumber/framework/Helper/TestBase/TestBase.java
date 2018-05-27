@@ -86,34 +86,7 @@ public class TestBase {
 	}
 	
 	
-	public WebDriver getBrowserObject(String bType) throws Exception
-		{
-			try
-			{
-				log.info(bType);
-				switch(bType.trim()){
-				
-				case "Chrome":
-					
-					ChromeBrowser chrome=ChromeBrowser.class.newInstance();
-					return chrome.getChromeDriver(chrome.getChromeCapabilities());
-				
-				case "Firefox":
-					
-					FireFoxBrowser firefox= FireFoxBrowser.class.newInstance();
-					return firefox.getFirefoxDriver(firefox.getFirefoxCapabilities());
-					
-				default:
-					throw new Exception("Driver not found" + new PropertyFileReader().getBrowserName());
-				}
-			}
-			
-			catch(Exception e)
-			{
-				log.equals(e);
-				throw e;
-			}
-		}
+	
 	
 	public static AppiumDriver getAnroidBrowserObject(String deviceID,String tcName) throws Exception
 	{
@@ -131,10 +104,12 @@ public class TestBase {
 				cap.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
 				cap.setCapability(MobileCapabilityType.DEVICE_NAME, "My Phone");
 				cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+				cap.setCapability("applicationName", "Samsung S4");
 				cap.setCapability(MobileCapabilityType.VERSION, "7.0");
 				cap.setCapability("udid", deviceID);
 				//URL url = new URL("http://0.0.0.0:4723/wd/hub");
-				url = new URL("http://0.0.0.0:4723/wd/hub");
+			//	url = new URL("http://0.0.0.0:4723/wd/hub");
+		url = new URL("http://127.0.0.1:4723/wd/hub");
 				driver= new AppiumDriver(url,cap);
 				break;	
 				
@@ -147,10 +122,12 @@ public class TestBase {
 				cap.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
 				cap.setCapability(MobileCapabilityType.DEVICE_NAME, "My Phone");
 				cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+				cap.setCapability("applicationName", "Samsung S5");
 				cap.setCapability(MobileCapabilityType.VERSION, "5.1.1");
 				cap.setCapability("udid", deviceID);
 				//URL url1 = new URL("http://0.0.0.0:4724/wd/hub");
-				url = new URL("http://0.0.0.0:4724/wd/hub");
+			//	url = new URL("http://0.0.0.0:4724/wd/hub");
+				url = new URL("http://127.0.0.1:4725/wd/hub");
 				driver= new AppiumDriver(url,cap);
 				break;
 			}	

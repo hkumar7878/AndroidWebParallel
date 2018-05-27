@@ -3,13 +3,7 @@
   <groupId>com.CDAppium.org</groupId>
   <artifactId>com.CDAppium.org</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <properties>
-
-  <threads>2</threads>
-
-  <file>Android_MobileAppSamsungGalaxy1_Emulatortestng.xml,Android_MobileAppSamsung_RealDevicetestng.xml</file>
-
-</properties>
+  
   <dependencies>
 <dependency>
 <groupId>junit</groupId>
@@ -134,7 +128,7 @@
                             <goal>generate</goal>
                         </goals>
                      <configuration>
-              	              <projectName>cucummberAdidasProject</projectName>
+                            <projectName>cucummberAdidasProject</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-reports-html</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
                             <enableFlashCharts>false</enableFlashCharts>
@@ -148,15 +142,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 				<configuration>
-					 <suiteXmlFiles>${file}</suiteXmlFiles>
-					  <skipTests>false</skipTests>
-					  	<properties>
-					  	    <property>
-					  	        <name>suitethreadpoolsize</name>
-					  	        		<value>${threads}</value>
-					  	        		</property>
-					  	        		
-					  	        		</properties>				
+					<suiteXmlFiles>
+						<suiteXmlFile>${project.basedir}\AndroidMobileApptestng.xml</suiteXmlFile>
+					</suiteXmlFiles>					
 				</configuration>
 			</plugin>
 		</plugins>
