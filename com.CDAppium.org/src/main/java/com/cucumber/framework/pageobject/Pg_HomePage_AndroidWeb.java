@@ -31,9 +31,9 @@ public class Pg_HomePage_AndroidWeb extends TestBase{
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
+	//	waitHelper = new WaitHelper(driver);
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
-		waitHelper.waitForElement(driver,20,txtHomePageHd);
+		//waitHelper.waitForElement(driver,20,txtHomePageHd);
 		//waitHelper.waitForElementVisible(locator, timeOutInSeconds, pollingEveryInMillSec);(driver,20,txtHomePageHd);
 	}
 	

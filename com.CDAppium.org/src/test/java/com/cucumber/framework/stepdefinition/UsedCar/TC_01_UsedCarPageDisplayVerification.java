@@ -30,7 +30,8 @@ public class TC_01_UsedCarPageDisplayVerification {
 	   
 	   String passResult="Used Car button is displayed on home page";
 	   String failResult="Used Car button is displayed on home page";
-	   driver=TestBase.driver;
+	  // driver=TestBase.driver;
+	   this.driver=testbaseObj.driver;
 	   System.out.println("------------Checking Used Car Button on home page--------------");
 	   cdHomePgObject= new Pg_HomePage_AndroidWeb(driver);
 	   cdHomePgObject.verifyBtnDisplay("Used Car",passResult,failResult,TestBase.deviceID);

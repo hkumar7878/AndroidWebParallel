@@ -21,15 +21,17 @@ import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.Wait.WaitHelper;
 import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 
+import io.appium.java_client.AppiumDriver;
+
 import org.apache.log4j.Logger;
 public class DropDownHelper {
 
-	private WebDriver driver;
+	public AppiumDriver driver;
 	private final static Logger log=LoggerHelper.getLogger(DropDownHelper.class);
 	
 	WaitHelper waitHelper = new WaitHelper(driver);
 	
-	public DropDownHelper(WebDriver driver)
+	public DropDownHelper(AppiumDriver driver)
 	{
 		this.driver=driver;
 		log.debug("DropDownHelper : " + this.driver.hashCode());

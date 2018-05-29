@@ -34,7 +34,8 @@ public class TestBase {
 	
 	private final static Logger log=LoggerHelper.getLogger(TestBase.class);
 	//public static WebDriver driver;
-	public static AppiumDriver driver;
+	//public static AppiumDriver driver;
+	public AppiumDriver driver;
 	public static Properties prop=null;
 	ActionBeforeClass actionBeforeClass;
 	public static String browserID=null;
@@ -58,6 +59,7 @@ public class TestBase {
     public static String scenarioName;
     public static URL url;
     //String XMLtestCaseName;
+    TestBase testBaseObj;
     
     @Before
 	public void before(Scenario scenario) throws Exception
@@ -78,7 +80,7 @@ public class TestBase {
 	@After
 	public void after(Scenario scenario) throws Exception
 	{
-		driver.quit();
+		testBaseObj.driver.quit();
 		log.info("Quited the scenario driver");
 		System.out.println("Quited the scenario driver");
 		System.out.println("---------Again restarting the driver instance for next scenarios--------");
@@ -88,7 +90,7 @@ public class TestBase {
 	
 	
 	
-	public static AppiumDriver getAnroidBrowserObject(String deviceID,String tcName) throws Exception
+	public AppiumDriver getAnroidBrowserObject(String deviceID,String tcName) throws Exception
 	{
 		try
 		{
@@ -110,7 +112,8 @@ public class TestBase {
 				//URL url = new URL("http://0.0.0.0:4723/wd/hub");
 			//	url = new URL("http://0.0.0.0:4723/wd/hub");
 				url = new URL("http://127.0.0.1:4723/wd/hub");
-				driver= new AppiumDriver(url,cap);
+				testBaseObj.driver= new AppiumDriver(url,cap);
+				//driver= new AppiumDriver(url,cap);
 				break;	
 				//Testing git
 				//testing branch
@@ -129,7 +132,8 @@ public class TestBase {
 				//URL url1 = new URL("http://0.0.0.0:4724/wd/hub");
 			//	url = new URL("http://0.0.0.0:4724/wd/hub");
 				url = new URL("http://127.0.0.1:4725/wd/hub");
-				driver= new AppiumDriver(url,cap);
+				//driver= new AppiumDriver(url,cap);
+				testBaseObj.driver= new AppiumDriver(url,cap);
 				break;
 			}	
 				//URL url = new URL("http://0.0.0.0:4723/wd/hub");
@@ -149,14 +153,31 @@ public class TestBase {
 	}
 	
 
-	
+	/*
 	public static void setUpAndroidDriver(String deviceID,String tcName) throws Exception
 	{		
 		try
 		{
-			driver=getAnroidBrowserObject(deviceID,tcName);
+			testBaseObj.driver=getAnroidBrowserObject(deviceID,tcName);
 			log.debug("Initialize Webdriver : " + driver.hashCode());
 			driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(),TimeUnit.SECONDS);
+		//driver.manage().window().maximize();
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+	}*/
+	
+	public void setUpAndroidDriver(String deviceID,String tcName) throws Exception
+	{		
+		try
+		{
+			testBaseObj.driver=getAnroidBrowserObject(deviceID,tcName);
+			log.debug("Initialize Webdriver : " + driver.hashCode());
+			testBaseObj.driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(),TimeUnit.SECONDS);
 		//driver.manage().window().maximize();
 		}
 		

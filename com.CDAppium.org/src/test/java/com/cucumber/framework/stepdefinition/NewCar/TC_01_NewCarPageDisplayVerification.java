@@ -27,8 +27,9 @@ public class TC_01_NewCarPageDisplayVerification {
 	
 	@Then("^user verifies home page is displayed$")
 	public void user_verifies_home_page_is_displayed() throws Throwable {
-		driver=TestBase.driver;
-		System.out.println(driver.hashCode());
+		//driver=TestBase.driver;
+		this.driver=testbaseObj.driver;
+		//System.out.println(driver.hashCode());
 		cdHomePgObject= new Pg_HomePage_AndroidWeb(driver);
 		System.out.println("Inside step def and browser Name is " + TestBase.deviceID);
 		String passResult="Car Dekho home page is displayed";

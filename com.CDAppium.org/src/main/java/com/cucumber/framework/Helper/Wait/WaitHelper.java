@@ -13,16 +13,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.log4j.Logger;
 
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
+import com.cucumber.framework.Helper.TestBase.TestBase;
+
+import io.appium.java_client.AppiumDriver;
 
 public class WaitHelper {
 	
-	public WebDriver driver;
+	public AppiumDriver driver;
 	private Logger log=LoggerHelper.getLogger(WaitHelper.class);
+	 TestBase testBaseObj;
 	
-	public WaitHelper(WebDriver driver)
+	public WaitHelper(AppiumDriver driver)
 	{
-		this.driver=driver;
-		log.debug("WaitHelper : " + this.driver.hashCode());
+		this.driver=testBaseObj.driver;
+		//log.debug("WaitHelper : " + this.driver.hashCode());
 	}
 	
 	public WebDriverWait getWait(int timeOutInSeconds,int pollingEveryInMillSec)

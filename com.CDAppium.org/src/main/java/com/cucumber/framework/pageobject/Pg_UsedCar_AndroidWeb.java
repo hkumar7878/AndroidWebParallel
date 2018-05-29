@@ -29,7 +29,7 @@ public class Pg_UsedCar_AndroidWeb extends TestBase{
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
+		//waitHelper = new WaitHelper(driver);
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
 		//waitHelper.waitForElement(driver,20,txtUsedCarPageHd);
 	}
