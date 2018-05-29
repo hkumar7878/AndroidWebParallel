@@ -109,9 +109,10 @@ public class TestBase {
 				cap.setCapability("udid", deviceID);
 				//URL url = new URL("http://0.0.0.0:4723/wd/hub");
 			//	url = new URL("http://0.0.0.0:4723/wd/hub");
-		url = new URL("http://127.0.0.1:4723/wd/hub");
+				url = new URL("http://127.0.0.1:4723/wd/hub");
 				driver= new AppiumDriver(url,cap);
 				break;	
+				//Testing git
 				
 				
 			case "Samsung Galaxy Emulator":
