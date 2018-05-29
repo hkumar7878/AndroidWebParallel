@@ -40,12 +40,17 @@ public class Pg_NewCar_AndroidWeb extends TestBase{
 	@FindBy(xpath="//h3[contains(text(),'Select a Category')]")
 	WebElement txtNewCarPageHd;
 	
+	@FindBy(xpath="//a[text()='Search New Car']")
+	WebElement btnSearchNewCar;
+	
+	////a[text()='Search New Car']
+	
 	
 	public void verifyPgHeader(String expTxt,String passResult,String failResult,String deviceID)
 	{
 		try
 		{
-			Thread.sleep(2000);	
+			Thread.sleep(1000);	
 			System.out.println("Checking New Car page for....."  + deviceID);
 			log.info("Checking Car Dekho home page" + deviceID);
 				actHdTxt=generichelper.readValueFromElement(txtNewCarPageHd);
@@ -82,4 +87,18 @@ public class Pg_NewCar_AndroidWeb extends TestBase{
 				ErrorCollector.addVerificationFailure(e);
 			}
 		}
+	
+	public void clickSearchOption_Btn(String searchOption,String passResult,String failResult,String deviceID)
+	{
+		//Thread.sleep(1000);	
+		System.out.println("Clicking on "  + searchOption);
+		log.info("Checking Car Dekho home page" + deviceID);
+		if(searchOption.equalsIgnoreCase(searchOption))
+		{
+			flag=GenericHelper.click(btnSearchNewCar);
+			Assert.assertTrue(flag, "Search New Car button is not clicked");
+			System.out.println("Car dekho home page is displayed");
+		}
+		
+	}
 }

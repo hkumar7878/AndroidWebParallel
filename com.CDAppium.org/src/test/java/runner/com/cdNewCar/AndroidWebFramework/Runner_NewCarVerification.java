@@ -39,9 +39,9 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	
-   // tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
-       tags ={"@TC_001","~@TC_002","~@TC_003","~@TC_04"},
-		dryRun=false,
+        tags ={"@TC_001,@TC_002","~@TC_003","~@TC_04"},
+      // tags ={"~@TC_001","@TC_002","~@TC_003","~@TC_04"},
+		dryRun=true,
 		monochrome = false
 )
 

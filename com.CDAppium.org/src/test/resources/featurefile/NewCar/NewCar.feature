@@ -11,6 +11,30 @@ Then click on New Car button
 Then Verify New Car page is displayed
 
 @TC_002
+Scenario: Verify the results on the basis of new car brand name
+
+Given navigate to web site
+Then user verifies home page is displayed
+And verify Used Car button is displayed on the home page
+Then click on New Car button
+Then Verify New Car page is displayed
+And Click on Search New Car button
+Then Verify Search New Car page is displayed
+And Click on Maruti button under Brands section
+Then Verify that Maruti module is selected
+And Click on Search button
+Then Verify Search result page specific to Maruti is displayed
+And Verify first search page should contain only maruti cars results only
+Then scroll to bottom and click on Next button
+Then Verify Search result page specific to Maruti is displayed
+And Verify next search page should contain only maruti cars results only
+Then scroll to bottom and click on Next button
+Then Verify Search result page specific to Maruti is displayed
+And Verify next search page should contain only maruti cars results only
+
+
+
+@TC_003
 Scenario: Verify the Used Car button on home page and user routes to correct page after clicking it
 
 Given navigate to web site
@@ -18,7 +42,6 @@ Then user verifies home page is displayed
 And verify Used Car button is displayed on the home page
 Then click on Used Car button
 Then Verify Used Car page is displayed
-
 
 
 

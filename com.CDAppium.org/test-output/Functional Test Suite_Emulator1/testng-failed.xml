@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="3" name="Failed suite [Functional Test Suite_Emulator1]" parallel="tests">
+  <parameter name="deviceID" value="42003a0fd3148479"/>
+  <listeners>
+    <listener class-name="ErrorCollectors.TestListenerAdapter"/>
+  </listeners>
+  <test name="Samsung7(failed)" parallel="tests">
+    <parameter name="deviceID" value="42003a0fd3148479"/>
+    <classes>
+      <class name="runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification">
+        <methods>
+          <include name="runCukes"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="afterTest"/>
+          <include name="onBeforeTestMobile"/>
+          <include name="onBeforeTestMobile"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification -->
+    </classes>
+  </test> <!-- Samsung7(failed) -->
+  <test name="Samsung Galaxy Emulator(failed)" parallel="tests">
+    <parameter name="deviceID" value="emulator-5554"/>
+    <classes>
+      <class name="runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification">
+        <methods>
+          <include name="runCukes"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="afterTest"/>
+          <include name="onBeforeTestMobile"/>
+          <include name="onBeforeTestMobile"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification -->
+    </classes>
+  </test> <!-- Samsung Galaxy Emulator(failed) -->
+</suite> <!-- Failed suite [Functional Test Suite_Emulator1] -->
