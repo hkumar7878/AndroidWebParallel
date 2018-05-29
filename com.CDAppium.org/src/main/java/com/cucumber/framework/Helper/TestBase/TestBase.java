@@ -113,7 +113,7 @@ public class TestBase {
 				driver= new AppiumDriver(url,cap);
 				break;	
 				//Testing git
-				
+				//testing branch
 				
 			case "Samsung Galaxy Emulator":
 				cap= DesiredCapabilities.android();
