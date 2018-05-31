@@ -8,16 +8,16 @@ Given navigate to web site
 Then user verifies home page is displayed
 And verify New Car button is displayed on the home page
 Then click on New Car button
-Then Verify New Car page is displayed
+Then Verify select a category page is displayed
 
 @TC_002
 Scenario: Verify the results on the basis of new car brand name
 
 Given navigate to web site
 Then user verifies home page is displayed
-And verify Used Car button is displayed on the home page
+And verify New Car button is displayed on the home page
 Then click on New Car button
-Then Verify New Car page is displayed
+Then Verify select a category page is displayed
 And Click on Search New Car button
 Then Verify Search New Car page is displayed
 And Click on Maruti button under Brands section

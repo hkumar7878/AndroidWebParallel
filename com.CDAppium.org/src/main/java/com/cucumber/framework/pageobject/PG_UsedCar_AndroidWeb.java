@@ -15,9 +15,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import ErrorCollectors.ErrorCollector;
 
-public class Pg_UsedCar_AndroidWeb extends TestBase{
+public class PG_UsedCar_AndroidWeb extends TestBase{
 	AppiumDriver driver;
-	private final Logger log = LoggerHelper.getLogger(Pg_HomePage_AndroidWeb.class);
+	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
 	ApplicationLib appLibOnj= new ApplicationLib();
@@ -25,7 +25,7 @@ public class Pg_UsedCar_AndroidWeb extends TestBase{
 	static boolean flag;
 	public static String err_Msg;
 	
-	public Pg_UsedCar_AndroidWeb(AppiumDriver driver)
+	public PG_UsedCar_AndroidWeb(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

@@ -17,17 +17,17 @@ import com.cucumber.framework.Helper.Wait.WaitHelper;
 import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class Pg_HomePage_AndroidWeb extends TestBase{
+public class PG_HomePage_AndroidWeb extends TestBase{
 	
 	AppiumDriver driver;
-	private final Logger log = LoggerHelper.getLogger(Pg_HomePage_AndroidWeb.class);
+	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
 	static boolean flag;
 	public static String err_Msg;
 	//PageAndroidWeb_NewCar cdobjNewCar;
 	
-	public Pg_HomePage_AndroidWeb(AppiumDriver driver)
+	public PG_HomePage_AndroidWeb(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -141,7 +141,7 @@ public class Pg_HomePage_AndroidWeb extends TestBase{
 	}
 	
 	
-	public Pg_NewCar_AndroidWeb clickBtn(String btnName,String passResult,String failResult,String deviceID) throws InterruptedException
+	public PG_NewCarSelectCategory_AndroidWeb clickBtn(String btnName,String passResult,String failResult,String deviceID) throws InterruptedException
 	{
 		
 		Thread.sleep(2000);
@@ -187,13 +187,13 @@ public class Pg_HomePage_AndroidWeb extends TestBase{
 				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
 			}
 		}
-		return new Pg_NewCar_AndroidWeb(driver);
+		return new PG_NewCarSelectCategory_AndroidWeb(driver);
 		
 	}
 	
-	public Pg_UsedCar_AndroidWeb clickUsedCarBtn(String btnName,String passResult,String failResult,String deviceID)
+	public PG_UsedCar_AndroidWeb clickUsedCarBtn(String btnName,String passResult,String failResult,String deviceID)
 	{
-		Pg_UsedCar_AndroidWeb cdobjUsedCar;
+		PG_UsedCar_AndroidWeb cdobjUsedCar;
 		try
 		{
 			log.info(".........Clicking on New Car button........");			
@@ -228,7 +228,7 @@ public class Pg_HomePage_AndroidWeb extends TestBase{
 			ErrorCollector.addVerificationFailure(e);
 			
 		}
-		return new Pg_UsedCar_AndroidWeb(driver);
+		return new PG_UsedCar_AndroidWeb(driver);
 		
 	}
 	

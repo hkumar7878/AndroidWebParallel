@@ -18,9 +18,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import ErrorCollectors.ErrorCollector;
 
-public class Pg_NewCar_AndroidWeb extends TestBase{
+public class PG_NewCarSelectCategory_AndroidWeb extends TestBase{
 	AppiumDriver driver;
-	private final Logger log = LoggerHelper.getLogger(Pg_HomePage_AndroidWeb.class);
+	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
 	ApplicationLib appLibOnj= new ApplicationLib();
@@ -28,11 +28,11 @@ public class Pg_NewCar_AndroidWeb extends TestBase{
 	static boolean flag;
 	public static String err_Msg;
 	
-	public Pg_NewCar_AndroidWeb(AppiumDriver driver)
+	public PG_NewCarSelectCategory_AndroidWeb(AppiumDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		waitHelper = new WaitHelper(driver);
+		//waitHelper = new WaitHelper(driver);
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
 		//waitHelper.waitForElement(driver,40,txtNewCarPageHd);
 	}
@@ -43,8 +43,13 @@ public class Pg_NewCar_AndroidWeb extends TestBase{
 	@FindBy(xpath="//a[text()='Search New Car']")
 	WebElement btnSearchNewCar;
 	
-	////a[text()='Search New Car']
-	
+	/**
+	 * 
+	 * @param expTxt
+	 * @param passResult
+	 * @param failResult
+	 * @param deviceID
+	 */
 	
 	public void verifyPgHeader(String expTxt,String passResult,String failResult,String deviceID)
 	{
@@ -88,17 +93,58 @@ public class Pg_NewCar_AndroidWeb extends TestBase{
 			}
 		}
 	
-	public void clickSearchOption_Btn(String searchOption,String passResult,String failResult,String deviceID)
+	/**
+	 * 
+	 * @param searchOption
+	 * @param passResult
+	 * @param failResult
+	 * @param deviceID
+	 * @return
+	 */
+	
+	public PG_SearchNewCar_By_Brand_Option_AndroidWeb clickSearchByOption_Btn(String searchOption,String passResult,String failResult,String deviceID)
 	{
 		//Thread.sleep(1000);	
-		System.out.println("Clicking on "  + searchOption);
-		log.info("Checking Car Dekho home page" + deviceID);
-		if(searchOption.equalsIgnoreCase(searchOption))
+		try
 		{
-			flag=GenericHelper.click(btnSearchNewCar);
-			Assert.assertTrue(flag, "Search New Car button is not clicked");
-			System.out.println("Car dekho home page is displayed");
-		}
 		
+			System.out.println("Clicking on "  + searchOption);
+			log.info("Checking Car Dekho home page" + deviceID);
+			if(searchOption.contains("Search New Car"))
+				{
+					flag=GenericHelper.click(btnSearchNewCar);
+					Assert.assertTrue(flag, "Search New Car button is not clicked");
+					System.out.println("Car dekho home page is displayed");
+				}
+		
+			if(deviceID.contains("42003a0fd3148479"))
+				{
+					androidReadDevice_logger1.log(LogStatus.PASS,passResult);
+				}
+		
+			else if(deviceID.contains("emulator-5554"))
+			{
+			//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.PASS, passResult);
+			}
+	}
+		
+		catch(Throwable e)
+		{
+			e.getMessage();
+			System.out.println(e.getMessage());
+			if(deviceID.contains("42003a0fd3148479"))
+			{
+				androidReadDevice_logger1.log(LogStatus.FAIL,failResult);
+			}
+			
+			else if(deviceID.contains("emulator-5554"))
+			{
+				//androidEmulator_logger1
+				androidEmulator_logger1.log(LogStatus.FAIL, failResult);
+			}
+			ErrorCollector.addVerificationFailure(e);
+		}
+		return new PG_SearchNewCar_By_Brand_Option_AndroidWeb(driver);
 	}
 }

@@ -9,6 +9,8 @@
   	<parameter name="deviceID" value="42003a0fd3148479"></parameter> 
  		<classes> 				
 				<class name="runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification"></class>	
+				             
+				
 		</classes>    			
  </test>
 

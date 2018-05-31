@@ -22,7 +22,7 @@ public class WaitHelper {
 	public WaitHelper(WebDriver driver)
 	{
 		this.driver=driver;
-		log.debug("WaitHelper : " + this.driver.hashCode());
+		//log.debug("WaitHelper : " + this.driver.hashCode());
 	}
 	
 	public WebDriverWait getWait(int timeOutInSeconds,int pollingEveryInMillSec)

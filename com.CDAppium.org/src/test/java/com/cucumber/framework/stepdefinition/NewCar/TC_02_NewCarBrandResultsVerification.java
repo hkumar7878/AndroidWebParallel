@@ -4,8 +4,9 @@ import org.apache.log4j.Logger;
 
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
-import com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb;
-import com.cucumber.framework.pageobject.Pg_NewCar_AndroidWeb;
+import com.cucumber.framework.pageobject.PG_HomePage_AndroidWeb;
+import com.cucumber.framework.pageobject.PG_NewCarSelectCategory_AndroidWeb;
+import com.cucumber.framework.pageobject.PG_SearchNewCar_By_Brand_Option_AndroidWeb;
 
 import cucumber.api.java.en.Then;
 import io.appium.java_client.AppiumDriver;
@@ -15,8 +16,10 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 	
 	TestBase testbaseObj= new TestBase();
 	public AppiumDriver driver;
-	Pg_HomePage_AndroidWeb cdHomePgObject;
-	Pg_NewCar_AndroidWeb cdNewCarPgObject;
+	PG_HomePage_AndroidWeb cdHomePgObject;
+	PG_NewCarSelectCategory_AndroidWeb cdNewCarSelCatObject;
+	//PG_NewCarSelectCategory_AndroidWeb cdNewCarSelCatObject;
+	PG_SearchNewCar_By_Brand_Option_AndroidWeb cdsearchNewCarBrandOptionObject;
 	
 	
 	@Then("^Click on Search New Car button$")
@@ -24,9 +27,9 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 		System.out.println("------Clicking New Car Button-----------");
 		String passResult="New Button is clicked successfully";
 		String failResult="New Button could not be clicked";
-		cdNewCarPgObject = new Pg_NewCar_AndroidWeb(driver);
-		cdNewCarPgObject= cdHomePgObject.clickBtn("New Car",passResult,failResult, TestBase.deviceID);
-	    
+		cdNewCarSelCatObject = new PG_NewCarSelectCategory_AndroidWeb(driver);
+		cdsearchNewCarBrandOptionObject= cdNewCarSelCatObject.clickSearchByOption_Btn("Search New Car",passResult,failResult, TestBase.deviceID);
+		
 	}
 
 	@Then("^Verify Search New Car page is displayed$")
@@ -34,7 +37,7 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 		System.out.println("------Checking New Car Page-----------");
 		String passResult="New Car Page is displayed successfully";
 		String failResult="New Car Page is not displayed";
-		cdNewCarPgObject.verifyPgHeader("Select a Category",passResult,failResult,TestBase.deviceID);
+		cdsearchNewCarBrandOptionObject.verifyPgHeader("Car name or brand",passResult,failResult,TestBase.deviceID);
 	    
 	}
 

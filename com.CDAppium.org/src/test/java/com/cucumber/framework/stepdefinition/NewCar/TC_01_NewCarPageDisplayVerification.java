@@ -8,10 +8,10 @@ import org.openqa.selenium.WebElement;
 
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
-import com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb;
+import com.cucumber.framework.pageobject.PG_HomePage_AndroidWeb;
 
 
-import com.cucumber.framework.pageobject.Pg_NewCar_AndroidWeb;
+import com.cucumber.framework.pageobject.PG_NewCarSelectCategory_AndroidWeb;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -21,15 +21,15 @@ public class TC_01_NewCarPageDisplayVerification {
 	
 	TestBase testbaseObj= new TestBase();
 	public AppiumDriver driver;
-	Pg_HomePage_AndroidWeb cdHomePgObject;
-	Pg_NewCar_AndroidWeb cdNewCarPgObject;
+	PG_HomePage_AndroidWeb cdHomePgObject;
+	PG_NewCarSelectCategory_AndroidWeb cdNewCarSelCatObject;
 
 	
 	@Then("^user verifies home page is displayed$")
 	public void user_verifies_home_page_is_displayed() throws Throwable {
 		driver=TestBase.driver;
 		System.out.println(driver.hashCode());
-		cdHomePgObject= new Pg_HomePage_AndroidWeb(driver);
+		cdHomePgObject= new PG_HomePage_AndroidWeb(driver);
 		System.out.println("Inside step def and browser Name is " + TestBase.deviceID);
 		String passResult="Car Dekho home page is displayed";
 		String failResult="Car Dekho home page is not displayed";
@@ -52,16 +52,16 @@ public class TC_01_NewCarPageDisplayVerification {
 		System.out.println("------Clicking New Car Button-----------");
 		String passResult="New Button is clicked successfully";
 		String failResult="New Button could not be clicked";
-		cdNewCarPgObject = new Pg_NewCar_AndroidWeb(driver);
-		cdNewCarPgObject= cdHomePgObject.clickBtn("New Car",passResult,failResult, TestBase.deviceID);
+		cdNewCarSelCatObject = new PG_NewCarSelectCategory_AndroidWeb(driver);
+		cdNewCarSelCatObject= cdHomePgObject.clickBtn("New Car",passResult,failResult, TestBase.deviceID);
 	}
 
-	@Then("^Verify New Car page is displayed$")
-	public void verify_New_Car_page_is_displayed() throws Throwable {
+	@Then("^Verify select a category page is displayed$")
+	public void verify_Select_Category_page_is_displayed() throws Throwable {
 		System.out.println("------Checking New Car Page-----------");
 		String passResult="New Car Page is displayed successfully";
 		String failResult="New Car Page is not displayed";
-		cdNewCarPgObject.verifyPgHeader("Select a Category",passResult,failResult,TestBase.deviceID);
+		cdNewCarSelCatObject.verifyPgHeader("Select a Category",passResult,failResult,TestBase.deviceID);
 	    
 	}
 

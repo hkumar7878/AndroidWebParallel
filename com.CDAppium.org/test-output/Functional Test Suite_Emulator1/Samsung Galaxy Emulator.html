@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue May 29 11:05:50 IST 2018</td>
+<td>Started on:</td><td>Thu May 31 16:18:22 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>616 seconds (616858 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2749 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -79,33 +79,11 @@ function toggleAllBoxes() {
 <td><div><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
 	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:57)
 	at runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification.runCukes(Runner_NewCarVerification.java:116)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:393)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
 Caused by: java.lang.NullPointerException
-	at com.cucumber.framework.Helper.Wait.WaitHelper.&lt;init&gt;(WaitHelper.java:28)
-	at com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb.&lt;init&gt;(Pg_HomePage_AndroidWeb.java:34)
-	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.user_verifies_home_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:33)
-	at ?.Then user verifies home page is displayed(featurefile/NewCar/NewCar.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1878673108", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1878673108'><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
+	at com.cucumber.framework.stepdefinition.CommonSteps.CommonSteps.navigate_to_web_site(CommonSteps.java:18)
+	at ?.Given navigate to web site(featurefile/NewCar/NewCar.feature:16)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1944138464", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1944138464'><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
 	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:57)
 	at runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification.runCukes(Runner_NewCarVerification.java:116)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -121,20 +99,22 @@ Caused by: java.lang.NullPointerException
 	at org.testng.TestRunner.privateRun(TestRunner.java:774)
 	at org.testng.TestRunner.run(TestRunner.java:624)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:393)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at com.cucumber.framework.Helper.Wait.WaitHelper.&lt;init&gt;(WaitHelper.java:28)
-	at com.cucumber.framework.pageobject.Pg_HomePage_AndroidWeb.&lt;init&gt;(Pg_HomePage_AndroidWeb.java:34)
-	at com.cucumber.framework.stepdefinition.NewCar.TC_01_NewCarPageDisplayVerification.user_verifies_home_page_is_displayed(TC_01_NewCarPageDisplayVerification.java:33)
-	at ?.Then user verifies home page is displayed(featurefile/NewCar/NewCar.feature:8)
+	at com.cucumber.framework.stepdefinition.CommonSteps.CommonSteps.navigate_to_web_site(CommonSteps.java:18)
+	at ?.Given navigate to web site(featurefile/NewCar/NewCar.feature:16)
 </pre></div></td>
-<td>616</td>
+<td>2</td>
 <td>runner.com.cdNewCar.AndroidWebFramework.Runner_NewCarVerification@6043cd28</td></tr>
 </table><p>
 </body>

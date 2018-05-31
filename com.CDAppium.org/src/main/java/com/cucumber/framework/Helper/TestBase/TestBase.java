@@ -14,7 +14,7 @@ import com.cucumber.framework.configreader.PropertyFileReader;
 import org.openqa.selenium.remote.BrowserType;
 
 import com.cucumber.framework.configuration.browser.ChromeBrowser;
-import com.cucumber.framework.configuration.browser.FireFoxBrowser;
+//import com.cucumber.framework.configuration.browser.FireFoxBrowser;
 import com.cucumber.framework.utility.ActionBeforeClass;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
