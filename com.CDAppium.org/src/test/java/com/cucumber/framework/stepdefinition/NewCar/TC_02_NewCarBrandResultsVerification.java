@@ -7,6 +7,7 @@ import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.pageobject.PG_HomePage_AndroidWeb;
 import com.cucumber.framework.pageobject.PG_NewCarSelectCategory_AndroidWeb;
 import com.cucumber.framework.pageobject.PG_SearchNewCar_By_Brand_Option_AndroidWeb;
+import com.cucumber.framework.pageobject.PG_SearchedCarResults_AndroidWeb;
 
 import cucumber.api.java.en.Then;
 import io.appium.java_client.AppiumDriver;
@@ -20,6 +21,7 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 	PG_NewCarSelectCategory_AndroidWeb cdNewCarSelCatObject;
 	//PG_NewCarSelectCategory_AndroidWeb cdNewCarSelCatObject;
 	PG_SearchNewCar_By_Brand_Option_AndroidWeb cdsearchNewCarBrandOptionObject;
+	PG_SearchedCarResults_AndroidWeb cdSearchedCarResultsObject;
 	
 	
 	@Then("^Click on Search New Car button$")
@@ -27,6 +29,7 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 		System.out.println("------Clicking New Car Button-----------");
 		String passResult="New Button is clicked successfully";
 		String failResult="New Button could not be clicked";
+		driver=TestBase.driver;
 		cdNewCarSelCatObject = new PG_NewCarSelectCategory_AndroidWeb(driver);
 		cdsearchNewCarBrandOptionObject= cdNewCarSelCatObject.clickSearchByOption_Btn("Search New Car",passResult,failResult, TestBase.deviceID);
 		
@@ -44,7 +47,10 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 	@Then("^Click on Maruti button under Brands section$")
 	public void click_on_Maruti_button_under_Brands_section() throws Throwable {
 	  
-	   
+		System.out.println("------Clicking Maruti Car button-----------");
+		String passResult="Maruti Car option selected successfully";
+		String failResult="Maruti Car option  was not selected";
+		cdsearchNewCarBrandOptionObject.selectCarBrandOption("Maruti",passResult,failResult,TestBase.deviceID);
 	}
 
 	@Then("^Verify that Maruti module is selected$")
@@ -55,7 +61,13 @@ private final Logger log= LoggerHelper.getLogger(TC_01_NewCarPageDisplayVerifica
 
 	@Then("^Click on Search button$")
 	public void click_on_Search_button() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	    System.out.println("--------Clicking Search button----------");
+	    String passResult="Search button is clicked successfully";
+		String failResult="Search button could not be clicked";
+		driver=TestBase.driver;
+		//cdSearchedCarResultsObject= new PG_SearchedCarResults_AndroidWeb(driver);
+		
+		//cdSearchedCarResultsObjectcdSearchedCarResultsObject
 	   
 	}
 

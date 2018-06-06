@@ -52,11 +52,29 @@ public class JavaScriptHelper {
 		Log.info(element);
 	}
 	
-	public void scrollIntoViewAndClick(WebElement element)
+	public boolean scrollIntoViewAndClick(WebElement element)
 	
 	{
-		scrollIntoView(element);
-		element.click();
-		Log.info(element);
+		boolean flag=false;
+		try
+		{
+			scrollIntoView(element);
+			if(element.isDisplayed())
+			{
+				element.click();
+				Log.info(element);
+				flag=true;
+			}
+		}
+		
+		
+			catch (RuntimeException e)
+			{
+				System.out.println(e.getMessage());
+				Log.info("Throwing run time exception for Element is not displayed for elemenet  " + element.getTagName().toString());
+				//exception_Msg=e.getMessage()+ element.getTagName().toString();
+				
+			}
+		return flag;
 	}
 }

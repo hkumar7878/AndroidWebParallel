@@ -3,6 +3,7 @@ package com.cucumber.framework.pageobject;
 import io.appium.java_client.AppiumDriver;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,10 +21,10 @@ import ErrorCollectors.ErrorCollector;
 
 public class PG_NewCarSelectCategory_AndroidWeb extends TestBase{
 	AppiumDriver driver;
-	private final Logger log = LoggerHelper.getLogger(PG_HomePage_AndroidWeb.class);
+	private final Logger log = LoggerHelper.getLogger(PG_NewCarSelectCategory_AndroidWeb.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
-	ApplicationLib appLibOnj= new ApplicationLib();
+	//ApplicationLib appLibOnj= new ApplicationLib();
 	String actHdTxt;
 	static boolean flag;
 	public static String err_Msg;
@@ -41,7 +42,12 @@ public class PG_NewCarSelectCategory_AndroidWeb extends TestBase{
 	WebElement txtNewCarPageHd;
 	
 	@FindBy(xpath="//a[text()='Search New Car']")
+	//@FindBy(xpath="//ul[@class='cd-pad-l-r']//li//a[contains(text(),'New Car')]")
 	WebElement btnSearchNewCar;
+	
+	@FindBy(xpath="//label[@id='Maruti']")
+	//@FindBy(xpath="//ul[@class='cd-pad-l-r']//li//a[contains(text(),'New Car')]")
+	WebElement btnMarutiCar;
 	
 	/**
 	 * 
@@ -111,7 +117,10 @@ public class PG_NewCarSelectCategory_AndroidWeb extends TestBase{
 			System.out.println("Clicking on "  + searchOption);
 			log.info("Checking Car Dekho home page" + deviceID);
 			if(searchOption.contains("Search New Car"))
+				
 				{
+					//WebElement btnSearchNewCar=driver.findElement(By.xpath("//a[text()='Search New Car']"));
+					System.out.println("Searching");
 					flag=GenericHelper.click(btnSearchNewCar);
 					Assert.assertTrue(flag, "Search New Car button is not clicked");
 					System.out.println("Car dekho home page is displayed");
